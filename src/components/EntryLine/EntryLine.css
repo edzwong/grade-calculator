@@ -1,0 +1,11 @@
+.gradeEntry {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 10px;
+}
+
+input {
+    height: 30px;
+    width: 130px;
+    font-size: 18px;
+}
