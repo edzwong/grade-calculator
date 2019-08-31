@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/grade-calculator/static/css/main.cd530ff6.chunk.css",
+    "main.js": "/grade-calculator/static/js/main.00ed6701.chunk.js",
+    "main.js.map": "/grade-calculator/static/js/main.00ed6701.chunk.js.map",
+    "runtime~main.js": "/grade-calculator/static/js/runtime~main.8f372ce8.js",
+    "runtime~main.js.map": "/grade-calculator/static/js/runtime~main.8f372ce8.js.map",
+    "static/js/2.98c0c99d.chunk.js": "/grade-calculator/static/js/2.98c0c99d.chunk.js",
+    "static/js/2.98c0c99d.chunk.js.map": "/grade-calculator/static/js/2.98c0c99d.chunk.js.map",
+    "index.html": "/grade-calculator/index.html",
+    "precache-manifest.0341b6aafd96fbd0a3ef748432468416.js": "/grade-calculator/precache-manifest.0341b6aafd96fbd0a3ef748432468416.js",
+    "service-worker.js": "/grade-calculator/service-worker.js",
+    "static/css/main.cd530ff6.chunk.css.map": "/grade-calculator/static/css/main.cd530ff6.chunk.css.map"
+  }
+}
