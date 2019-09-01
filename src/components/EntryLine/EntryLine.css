@@ -1,11 +1,14 @@
 .gradeEntry {
     display: flex;
-    justify-content: space-between;
     margin: 0px 0px 10px;
+}
+
+.entryBox {
+    flex: 50%;
 }
 
 input {
     height: 30px;
-    width: 130px;
+    width: 120px;
     font-size: 18px;
 }
