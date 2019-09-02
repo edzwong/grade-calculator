@@ -3,13 +3,28 @@
     min-width: 285px;
     margin: 20px auto;
     padding: 20px 40px;
-    border-radius: 20px;
+    border-radius: 15px;
     background: white;
+    box-shadow: 2px 3px rgba(209, 209, 209, 0.63);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: rgb(160,43,34);
 }
 
 .table {
     margin-top: 30px;
-    max-width: 400px;
+    max-width: 320px;
     margin: 0 auto;
 }
 
@@ -18,4 +33,29 @@
 }
 .header {
     flex: 50%;
+}
+
+button {
+    outline: none;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+
+#averageButton {
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: solid 3px black;
+    background: #B5525C;
+}
+
+#averageButton:active {
+    background: rgb(155, 70, 78);
 }
