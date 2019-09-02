@@ -9,9 +9,12 @@ class EntryTable extends React.Component {
         this.state = {
             entries: [
                 { id: 0, grade: '', weight: '' },
-                { id: 1, grade: '', weight: '' }
+                { id: 1, grade: '', weight: '' },
+                { id: 2, grade: '', weight: ''},
+                { id: 3, grade: '', weight: ''},
+                { id: 4, grade: '', weight: ''}
             ],
-            numEntry: 2
+            numEntry: 5
         };
     }
 
@@ -22,7 +25,7 @@ class EntryTable extends React.Component {
         } else {
             newArray[id].weight = value;
         }
-        this.setState({ entries: newArray });
+        this.setState({ entries: newArray }, this.calcAverage());
     }
 
     calcAverage = () => {
@@ -32,8 +35,7 @@ class EntryTable extends React.Component {
             average += entry.grade * (entry.weight / 100);
             weight += parseInt(entry.weight) || 0;
         };
-        console.log(average);
-        console.log(weight / 100);
+        this.props.handleAverage(average.toFixed(2), weight);
     }
 
     clear = () => {
@@ -67,7 +69,6 @@ class EntryTable extends React.Component {
                     ))
                 }
                 <div className="buttons">
-                    <button onClick={this.calcAverage}>Am I Failing?</button>
                     <button onClick={this.addRow}>Add New Row</button>
                     <button onClick={this.clear}>Clear</button>
                 </div>
