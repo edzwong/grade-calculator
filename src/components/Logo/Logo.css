@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+h1 {
+    color: rgb(160,43,34);
+}

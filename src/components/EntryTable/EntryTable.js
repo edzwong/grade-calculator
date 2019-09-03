@@ -35,7 +35,12 @@ class EntryTable extends React.Component {
             average += entry.grade * (entry.weight / 100);
             weight += parseInt(entry.weight) || 0;
         };
-        this.props.handleAverage(average.toFixed(2), weight);
+        if (weight !== 0) {
+            var weightedAverage = (average/(weight/100)).toFixed(2);
+            this.props.handleAverage(weightedAverage, weight);
+        } else {
+            this.props.handleAverage(0, 0);
+        }
     }
 
     clear = () => {
