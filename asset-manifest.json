@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/grade-calculator/static/css/main.4365af74.chunk.css",
+    "main.css": "/grade-calculator/static/css/main.60af2226.chunk.css",
     "main.js": "/grade-calculator/static/js/main.60d916c3.chunk.js",
     "main.js.map": "/grade-calculator/static/js/main.60d916c3.chunk.js.map",
     "runtime~main.js": "/grade-calculator/static/js/runtime~main.8f372ce8.js",
@@ -8,8 +8,8 @@
     "static/js/2.28739565.chunk.js": "/grade-calculator/static/js/2.28739565.chunk.js",
     "static/js/2.28739565.chunk.js.map": "/grade-calculator/static/js/2.28739565.chunk.js.map",
     "index.html": "/grade-calculator/index.html",
-    "precache-manifest.a6cbcbdf7ad64999690baec3ad5b6369.js": "/grade-calculator/precache-manifest.a6cbcbdf7ad64999690baec3ad5b6369.js",
+    "precache-manifest.f8b40a0d0a2f0b66d8b434d619e4ee42.js": "/grade-calculator/precache-manifest.f8b40a0d0a2f0b66d8b434d619e4ee42.js",
     "service-worker.js": "/grade-calculator/service-worker.js",
-    "static/css/main.4365af74.chunk.css.map": "/grade-calculator/static/css/main.4365af74.chunk.css.map"
+    "static/css/main.60af2226.chunk.css.map": "/grade-calculator/static/css/main.60af2226.chunk.css.map"
   }
 }
