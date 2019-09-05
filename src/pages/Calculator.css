@@ -1,4 +1,4 @@
-.gradeCalculator {
+.calculator {
     width: 70%;
     min-width: 285px;
     margin: 20px auto;
@@ -8,8 +8,8 @@
     box-shadow: 2px 3px rgba(209, 209, 209, 0.63);
 }
 
-.table {
-    margin-top: 30px;
+.averageCalc {
+    padding: 12px 0 40px;
     max-width: 320px;
     margin: 0 auto;
 }
@@ -17,8 +17,12 @@
 .columnHeaders {
     display: flex;
 }
+
 .header {
     flex: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    padding-bottom: 15px;
 }
 
 button {
@@ -30,18 +34,37 @@ button:hover {
     opacity: 1;
 }
 
+input {
+    height: 25px;
+    width: 80px;
+    font-size: 16px;
+    border-radius: 2px;
+    border: solid 1px black;
+    background: rgb(248, 248, 248);
+}
 
-#averageButton {
+.averageButton {
     height: 40px;
     width: 150px;
     margin-top: 20px;
+    padding: 0;
     font-size: 20px;
     font-weight: bold;
     border-radius: 20px;
-    border: solid 3px black;
+    border: none;
     background: #B5525C;
+    box-shadow: 2px 2px rgba(204, 204, 204, 0.534);
 }
 
-#averageButton:active {
+.averageButton:active {
     background: rgb(155, 70, 78);
+}
+
+.result div:first-child {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.errorMessage {
+    color: rgb(168, 0, 0);
 }

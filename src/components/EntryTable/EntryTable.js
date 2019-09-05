@@ -49,7 +49,7 @@ class EntryTable extends React.Component {
             entry.grade = '';
             entry.weight = '';
         };
-        this.setState({ entries: newArray });
+        this.setState({ entries: newArray }, this.calcAverage());
     }
 
     addRow = () => {

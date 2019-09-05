@@ -12,10 +12,10 @@ class EntryLine extends React.Component {
         return (
             <div className="gradeEntry">
                 <span className="entryBox">
-                    <input className="grade" type="number" value={this.props.grade} onChange={this.handleChange} /> %
+                    <input className="grade" type="number" value={this.props.grade} onChange={this.handleChange} /> 
                 </span>
                 <span className="entryBox">
-                    <input className="weight" type="number" value={this.props.weight} onChange={this.handleChange} /> %
+                    <input className="weight" type="number" value={this.props.weight} onChange={this.handleChange} />
                 </span>
             </div>
         );
