@@ -3,7 +3,6 @@ import React from 'react';
 import './EntryLine.css';
 
 class EntryLine extends React.Component {
-
     handleChange = (event) => {
         this.props.onChange(this.props.id, event.target.className, event.target.value)
     }

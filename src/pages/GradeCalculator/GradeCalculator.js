@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import EntryTable from '../../components/EntryTable/EntryTable';
+import GradeTable from '../../components/Tables/GradeTable/GradeTable';
 import Logo from '../../components/Logo/Logo';
 import DisplayBox from '../../components/DisplayBox/DisplayBox';
 
@@ -11,32 +12,38 @@ class GradeCalculator extends React.Component {
         average: 0,
         weight: 0,
         extra1: '',
-        extra2: ''
+        extra2: '',
+        extra1prompt: '',
+        extra2prompt: ''
     }
 
     getAverage = (average, weight) => {
         this.setState({
             average: average,
-            weight: weight
-        })
+            weight: weight,
+            extra1: '',
+            extra1prompt: '',
+            extra2: '',
+            extra2prompt: ''
+        });
     }
 
     calcExtra1 = (e) => {
         var newValue = '';
         if (e.target.value !== '') {
-            var decimalWeight = this.state.weight/100;
-            newValue = ((e.target.value - (this.state.average * decimalWeight))/(1-decimalWeight)).toFixed(2);
+            var decimalWeight = this.state.weight / 100;
+            newValue = ((e.target.value - (this.state.average * decimalWeight)) / (1 - decimalWeight)).toFixed(2);
         }
-        this.setState({extra1: newValue});
+        this.setState({ extra1: newValue, extra1prompt: e.target.value });
     }
 
     calcExtra2 = (e) => {
         var newValue = '';
         if (e.target.value !== '') {
-            var decimalWeight = this.state.weight/100;
+            var decimalWeight = this.state.weight / 100;
             newValue = ((this.state.average * decimalWeight) + (e.target.value * (1 - decimalWeight))).toFixed(2);
         }
-        this.setState({extra2: newValue});
+        this.setState({ extra2: newValue, extra2prompt: e.target.value });
     }
 
     render() {
@@ -48,7 +55,12 @@ class GradeCalculator extends React.Component {
         }
         return (
             <div className="calculator">
-                <Logo type="grade" />
+                <div className="titleBar">
+                    <Logo type="grade" />
+                    <div className="link">
+                        <Link to="/gpa">GPA Calculator →</Link>
+                    </div>
+                </div>
                 <span>Instructions: Enter your grades and how much they're worth as percentages. Don't enter the percent symbol (%).</span>
                 <div className="averageCalc">
                     <div className="table">
@@ -56,24 +68,24 @@ class GradeCalculator extends React.Component {
                             <span className="header">Grade(%)</span>
                             <span className="header">Weight(%)</span>
                         </div>
-                        <EntryTable handleAverage={this.getAverage} />
+                        <GradeTable handleAverage={this.getAverage} />
                     </div>
                     <div className="result">
-                        <DisplayBox field={"Current avg"} value={this.state.average} percentage/>
-                        <DisplayBox field={"Total weight"} value={this.state.weight} percentage/>
+                        <DisplayBox field={"Current avg"} value={this.state.average} percentage />
+                        <DisplayBox field={"Total weight"} value={this.state.weight} percentage />
                     </div>
                 </div>
                 <span>What average grade on remaining assignments is needed for a final grade of</span>
-                <input type="number" style={{height: 18, width: 50, margin: 5}} onChange={this.calcExtra1} disabled={error}/>?
+                <input type="number" style={{ height: 18, width: 55, margin: 5 }} value={this.state.extra1prompt} onChange={this.calcExtra1} disabled={error} />?
                 <div className="errorMessage">{errorMessage}</div>
                 <div className="averageCalc">
-                    <DisplayBox field={"You need"} value={this.state.extra1} percentage error={error}/>
+                    <DisplayBox field={"You need"} value={this.state.extra1} percentage error={error} />
                 </div>
                 <span>What's my final grade if the average grade of my remaining assignments is</span>
-                <input style={{height: 18, width: 50, margin: 5}} onChange={this.calcExtra2} disabled={error}/>?
+                <input style={{ height: 18, width: 55, margin: 5 }} value={this.state.extra2prompt} onChange={this.calcExtra2} disabled={error} />?
                 <div className="errorMessage">{errorMessage}</div>
                 <div className="averageCalc">
-                    <DisplayBox field={"Final grade"} value={this.state.extra2} percentage error={error}/>
+                    <DisplayBox field={"Final grade"} value={this.state.extra2} percentage error={error} />
                 </div>
             </div>
         );

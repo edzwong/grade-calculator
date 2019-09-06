@@ -68,3 +68,14 @@ input {
 .errorMessage {
     color: rgb(168, 0, 0);
 }
+
+.titleBar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link {
+    margin: 20px 20px 30px;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import EntryLine from '../EntryLine/EntryLine';
+import EntryLine from '../../EntryLine/EntryLine';
 
-import './EntryTable.css';
+import '../Table.css';
 
-class EntryTable extends React.Component {
+class GradeTable extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -32,11 +32,11 @@ class EntryTable extends React.Component {
         var average = 0;
         var weight = 0;
         for (var entry of this.state.entries) {
-            average += entry.grade * (entry.weight / 100);
-            weight += parseInt(entry.weight) || 0;
+            average += this.uoftGPA(entry.grade) * (entry.weight);
+            weight += Number(parseFloat(entry.weight).toFixed(2)) || 0;
         };
         if (weight !== 0) {
-            var weightedAverage = (average/(weight/100)).toFixed(2);
+            var weightedAverage = (average/weight).toFixed(2);
             this.props.handleAverage(weightedAverage, weight);
         } else {
             this.props.handleAverage(0, 0);
@@ -58,6 +58,49 @@ class EntryTable extends React.Component {
             numEntry: prevState.numEntry + 1 
             })
         )
+    }
+
+    uoftGPA = (grade, gradeScale) => {
+        var gpa;
+        var roundGrade = Math.round(grade);
+        switch(true) {
+            case roundGrade < 50:
+                gpa = 0;
+                break;
+            case roundGrade < 53:
+                gpa = 0.7;
+                break;
+            case roundGrade < 57:
+                gpa = 1;
+                break;
+            case roundGrade < 60:
+                gpa = 1.3;
+                break;
+            case roundGrade < 63:
+                gpa = 1.7;
+                break;
+            case roundGrade < 67:
+                gpa = 2;
+                break;
+            case roundGrade < 70:
+                gpa = 2.3;
+                break;
+            case roundGrade < 73:
+                gpa = 2.7;
+                break;
+            case roundGrade < 77:
+                gpa = 3;
+                break;
+            case roundGrade < 80:
+                gpa = 3.3;
+                break;
+            case roundGrade < 85:
+                gpa = 3.7;
+                break;
+            default:
+                gpa = 4;
+        }
+        return gpa;
     }
 
     render() {
@@ -82,4 +125,4 @@ class EntryTable extends React.Component {
     }
 }
 
-export default EntryTable;
+export default GradeTable;
